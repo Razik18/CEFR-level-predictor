@@ -39,11 +39,13 @@ We can upload them from the GitHub Data folder or you can use directly the Kaggl
      - KNN
      - Decision tree
      - Random Forest models.
+     - CamenBERT
+       
 
-3. **Model without Cleaning**
+3. **Model without 
    - We implement the models shown in class without cleaning. We use a Tf-idf vectorizer and do hyperparameter tuning to find the best hyperparameters and check the results obtained.
 
-4. **Model with Cleaning Data**
+4. **Cleaning Data approach**
    - This time we clean data by:
      - Removing punctuation
      - Removing stop words
@@ -51,7 +53,7 @@ We can upload them from the GitHub Data folder or you can use directly the Kaggl
      - Lemmatization
      - For vectorization, we tried different approaches to see the best combination which led us not to remove the stop words anymore since some sentences are short.
 
-#### Results without Data Cleaning:
+#### Results:
 | Models                    | Precision | First Header | Second Header | Third Header |
 |---------------------------|-----------|--------------|---------------|--------------|
 | Logistic Regression       | 0.475666  | 0.479224     | 0.474447      | 0.478125     |
@@ -60,13 +62,6 @@ We can upload them from the GitHub Data folder or you can use directly the Kaggl
 | Decision Tree             | 0.301306  | 0.300758     | 0.298111      | 0.301042     |
 | KNN Model                 | 0.419700  | 0.354327     | 0.345031      | 0.354167     |
 
-#### Results with Data Cleaning:
-| Models                | Precision | First Header | Second Header | Third Header |
-|-----------------------|-----------|--------------|---------------|--------------|
-| Logistic Regression   | 0.501281  | 0.504158     | 0.499639      | 0.503125     |
-| Random Forest         | 0.437922  | 0.420731     | 0.400117      | 0.419792     |
-| Decision Tree         | 0.323231  | 0.315516     | 0.323665      | 0.327083     |
-| KNN Model             | 0.412903  | 0.418594     | 0.408406      | 0.418750     |
 
 #### 4. Submission
 - We use our best model on the cleaned sentences of file 'unlabelled_test_dat.csv', convert it to the same format as in the file 'sample_submission.csv', download in CSV format, and submit on Kaggle (it gave us a score of 0.45583).
