@@ -2,8 +2,9 @@
 
 # GROUP : MICROSOFT
 
-# participants: Saib Abdelrazzak
-              Ajiach Nabil 
+# participants: 
+                Saib Abdelrazzak
+                Ajiach Nabil 
 
 # DESCRIPTION : 
 
