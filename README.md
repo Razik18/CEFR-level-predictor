@@ -1,5 +1,14 @@
 # DSML-2023-microsoft
 
+#GROUP : MICROSOFT
+
+#participants: Saib Abdelrazzak
+              Ajiach Nabil 
+
+#DESCRIPTION : 
+
+
+
 | Models                     | Precision | First Header | Second Header | Third Header |
 |----------------------------|-----------|--------------|---------------|--------------|
 | Logistic Regression        | 0.475666  | 0.479224     | 0.474447      | 0.478125     |
