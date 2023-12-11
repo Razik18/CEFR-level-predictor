@@ -11,7 +11,7 @@
 #### Description:
 As described above in the project's Title, the main goal of this Kaggle competition is to predict the difficulty level of a French text according to The Common European Framework of Reference for Languages that describes 6 levels of language: A1, A2, B1, B2, C1, C2.
 
-You can find all information and rules on this Kaggle link: [Kaggle Competition]((https://www.kaggle.com/competitions/detecting-french-texts-difficulty-level-2023/overview))
+You can find all information and rules on this Kaggle link: [Kaggle Competition](https://www.kaggle.com/competitions/detecting-french-texts-difficulty-level-2023/overview)
 
 #### Our Youtube Video 
 [Watch the video](#)
@@ -75,4 +75,4 @@ We can upload them from the GitHub Data folder or you can use directly the Kaggl
 - Many ways exist to improve the accuracy of a model. For this competition, we propose two other methods: The Principal Component Analysis (PCA), which for some unknown reason didn't improve our model. Afterward, we tried the Bert Model from HuggingFace which gave us a slight improvement. You can find them in the CODE folder 'Lausanne_PCA.ipynb', 'Lausanne_bert.ipynb'.
 
 
-(https://www.kaggle.com/competitions/detecting-french-texts-difficulty-level-2023/overview)https://www.kaggle.com/competitions/detecting-french-texts-difficulty-level-2023/overview
+(https://www.kaggle.com/competitions/detecting-french-texts-difficulty-level-2023/overview)
