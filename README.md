@@ -19,7 +19,7 @@ You can find all information and rules on this Kaggle link: [Kaggle Competition]
 #### Dataset Description
 - `training_data.csv` -> the training set (with sentence and respective difficulty)
 - `unlabelled_test_data.csv` -> the test set (with just sentence)
-- `sample_submission.csv` -> a sample submission file in the correct format (with just difficulty)
+- `rajouter le fichier generer par notre model` -> submission of our prediction with only id and difficulty
 
 #### Columns
 - `id`: Numerical identifier of the sentence.
@@ -30,37 +30,35 @@ We can upload them from the GitHub Data folder or you can use directly the Kaggl
 
 #### Approach
 1. **Installing the Necessary Packages**
-   - For language support: `spacy`, `nltk`
-   - For modelling: `pandas`, `numpy`, `sklearn`, etc...
+   - For language support: `spacy`, `nltk`, `sentencepiece`,`transformers datasets pandas sickit-learn`
+   - For modelling: `pandas`, `numpy`, `sklearn`, `torch` etc...
 
 2. **Models**
    - The Models we used in our analysis:
      - Logistic regression
      - KNN
-     - Decision tree
+     - CamemBERT
      - Random Forest models.
-     - CamenBERT
+     - FlauBERT
        
 
 3. **Model without 
    - We implement the models shown in class without cleaning. We use a Tf-idf vectorizer and do hyperparameter tuning to find the best hyperparameters and check the results obtained.
+   - We also annalyse the training data to see if we have 
 
 4. **Cleaning Data approach**
-   - This time we clean data by:
-     - Removing punctuation
-     - Removing stop words
-     - Tokenization
-     - Lemmatization
-     - For vectorization, we tried different approaches to see the best combination which led us not to remove the stop words anymore since some sentences are short.
+ We tried to clean our data but we don't find good results by doing this.
+   -In fact we have: -Annalyse to see if there is some duplicated data.
+                     -Try to catch if
 
 #### Results:
 | Models                    | Precision | First Header | Second Header | Third Header |
 |---------------------------|-----------|--------------|---------------|--------------|
 | Logistic Regression       | 0.475666  | 0.479224     | 0.474447      | 0.478125     |
-| Random Forest             | 0.416684  | 0.416253     | 0.401491      | 0.413542     |
-| Decision Tree Improvement | 0.314862  | 0.315516     | 0.311864      | 0.315625     |
-| Decision Tree             | 0.301306  | 0.300758     | 0.298111      | 0.301042     |
-| KNN Model                 | 0.419700  | 0.354327     | 0.345031      | 0.354167     |
+| KNN                         | 0.416684  | 0.416253     | 0.401491      | 0.413542     |
+| CamemBERT                   | 0.314862  | 0.315516     | 0.311864      | 0.315625     |
+|Random Forest models                        | 0.301306  | 0.300758     | 0.298111      | 0.301042     |
+| FlauBERT                   | 0.419700  | 0.354327     | 0.345031      | 0.354167     |
 
 
 #### 4. Submission
