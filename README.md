@@ -41,7 +41,7 @@ We can upload them from the GitHub Data folder or you can use directly the Kaggl
      - Random Forest models.
      - FlauBERT
 
-####Data Exploration and Cleaning
+#### Data Exploration and Cleaning
 
 Before embarking on the model training journey, we invested significant effort into thoroughly exploring the dataset. This initial step is crucial as it informs subsequent decisions about data preprocessing and model selection.
 
