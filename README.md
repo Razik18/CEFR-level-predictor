@@ -38,7 +38,7 @@ We can upload them from the GitHub Data folder or you can use directly the Kaggl
      - Logistic regression
      - KNN
      - CamemBERT
-     - Random Forest models.
+     - Random Forest models
      - FlauBERT
 
 #### Data Exploration and Cleaning
