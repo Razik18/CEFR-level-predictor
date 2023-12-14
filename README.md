@@ -41,20 +41,20 @@ We can upload them from the GitHub Data folder or you can use directly the Kaggl
      - Random Forest models.
      - FlauBERT
 
-3. **Data Exploration and Cleaning**
+####Data Exploration and Cleaning
 
 Before embarking on the model training journey, we invested significant effort into thoroughly exploring the dataset. This initial step is crucial as it informs subsequent decisions about data preprocessing and model selection.
 
-### Key Observations:
+## Key Observations:
 - **Well-Distributed Values**: Our analysis revealed that the dataset was well-balanced across different difficulty levels. This balance is crucial in machine learning, especially for classification tasks, as it prevents model bias towards more frequent labels.
 - **Quality of Data**: We examined the dataset for common issues such as missing values, duplicates, and outliers. To our advantage, the dataset maintained a high standard of quality, with minimal anomalies that could potentially skew the model's performance.
 - **Consistency in Labeling**: The labels for text difficulty followed a consistent pattern, reducing the need for label encoding or correction.
 - **Textual Data Analysis**: Given that our dataset consists of textual data, we checked for variations in text length, language consistency, and the presence of special characters or noise. The texts were uniformly in French, with standard language use and minimal noise, which is ideal for natural language processing tasks.
 
-### Decision on Data Cleaning:
+## Decision on Data Cleaning:
 Based on these observations, we concluded that extensive data cleaning or balancing was not necessary for our project. This finding allowed us to channel our efforts more effectively towards feature engineering and model tuning. 
 
-4. **Model Training and Hyperparameter Optimization**
+####Model Training and Hyperparameter Optimization
 
 This section documents the process of training several machine learning models, including the hyperparameter optimization for each, and provides a comparative analysis of their performance based on several metrics.
 
