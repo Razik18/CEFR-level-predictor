@@ -30,15 +30,16 @@ We can upload them from the GitHub Data folder or you can use directly the Kaggl
 
 #### Approach
 1. **Installing the Necessary Packages**
-   - For language support: `spacy`, `nltk`, `sentencepiece`,`transformers datasets pandas sickit-learn`
+   - For language support: `spacy`, `nltk`, `sentencepiece`,`transformers datasets pandas sickit-learn` etc...
    - For modelling: `pandas`, `numpy`, `sklearn`, `torch` etc...
 
 2. **Models**
    - The Models we used in our analysis:
      - Logistic regression
      - KNN
-     - CamemBERT
+     - Decision Tree
      - Random Forest models
+     - CamemBERT
      - FlauBERT
 
 #### Data Exploration and Cleaning
@@ -46,9 +47,13 @@ We can upload them from the GitHub Data folder or you can use directly the Kaggl
 Before embarking on the model training journey, we invested significant effort into thoroughly exploring the dataset. This initial step is crucial as it informs subsequent decisions about data preprocessing and model selection.
 
 ## Key Observations:
+
 - **Well-Distributed Values**: Our analysis revealed that the dataset was well-balanced across different difficulty levels. This balance is crucial in machine learning, especially for classification tasks, as it prevents model bias towards more frequent labels.
+
 - **Quality of Data**: We examined the dataset for common issues such as missing values, duplicates, and outliers. To our advantage, the dataset maintained a high standard of quality, with minimal anomalies that could potentially skew the model's performance.
+
 - **Consistency in Labeling**: The labels for text difficulty followed a consistent pattern, reducing the need for label encoding or correction.
+  
 - **Textual Data Analysis**: Given that our dataset consists of textual data, we checked for variations in text length, language consistency, and the presence of special characters or noise. The texts were uniformly in French, with standard language use and minimal noise, which is ideal for natural language processing tasks.
 
 ## Decision on Data Cleaning:
@@ -63,7 +68,7 @@ This section documents the process of training several machine learning models, 
 ### Hyperparameter Tuning
 
 **Tuned Hyperparameters:**
-- `C`: Inverse of regularization strength tested over [0.01, 0.1, 1, 10, 100].
+- `C`: Inverse of regularization strength tested over [1, 10, 100].
 - `solver`: Optimization algorithms tested [‘liblinear’, ‘saga’].
 
 **Optimization Method:** Grid Search with 5-fold cross-validation.
@@ -72,16 +77,15 @@ This section documents the process of training several machine learning models, 
 - `C`: 10
 - `solver`: liblinear
 
-**Cross-Validation Results**
-- Average Accuracy: 0.82
-- Best Accuracy Score: 0.85
+**Results**
+- Best Accuracy Score: 0.32
 
 ## k-Nearest Neighbors (kNN)
 
 ### Hyperparameter Tuning
 
 **Tuned Hyperparameters:**
-- `n_neighbors`: Number of neighbors tested over [3, 5, 7, 9].
+- `n_neighbors`: Number of neighbors tested over [5, 7, 9].
 - `weights`: Weight function used in prediction [‘uniform’, ‘distance’].
 
 **Optimization Method:** Random Search with 5-fold cross-validation.
@@ -90,16 +94,15 @@ This section documents the process of training several machine learning models, 
 - `n_neighbors`: 5
 - `weights`: distance
 
-**Cross-Validation Results**
-- Average Accuracy: 0.78
-- Best Accuracy Score: 0.81
+**Results**
+- Best Accuracy Score: 0.31
 
 ## Decision Tree
 
 ### Hyperparameter Tuning
 
 **Tuned Hyperparameters:**
-- `max_depth`: The maximum depth of the tree tested over [10, 20, 30, None].
+- `max_depth`: The maximum depth of the tree tested over [20, 30, None].
 - `min_samples_split`: Minimum number of samples required to split an internal node tested over [2, 5, 10].
 
 **Optimization Method:** Grid Search with 5-fold cross-validation.
@@ -108,16 +111,16 @@ This section documents the process of training several machine learning models, 
 - `max_depth`: 20
 - `min_samples_split`: 5
 
-**Cross-Validation Results**
-- Average Accuracy: 0.76
-- Best Accuracy Score: 0.79
+**Results**
+
+- Best Accuracy Score: 0.39
 
 ## Random Forests
 
 ### Hyperparameter Tuning
 
 **Tuned Hyperparameters:**
-- `n_estimators`: Number of trees in the forest tested over [100, 200, 300, 400].
+- `n_estimators`: Number of trees in the forest tested over [200, 300, 400].
 - `max_features`: Number of features to consider when looking for the best split tested over [‘auto’, ‘sqrt’].
 
 **Optimization Method:** Grid Search with 5-fold cross-validation.
@@ -126,8 +129,7 @@ This section documents the process of training several machine learning models, 
 - `n_estimators`: 300
 - `max_features`: auto
 
-**Cross-Validation Results**
-- Average Accuracy: 0.54
+**Results**
 - Best Accuracy Score: 0.59
 
 ## CamemBERT Model
@@ -137,18 +139,18 @@ This section documents the process of training several machine learning models, 
 **Tuned Hyperparameters:**
 - `learning_rate`: Tested over [5e-5, 4e-5, 3e-5].
 - `num_train_epochs`: Tested [3, 4, 5].
-- `batch_size`: Tested [16, 32, 64].
+- `batch_size`: Tested [16, 32].
 
-**Optimization Method:** Grid Search with 5-fold cross-validation.
+**Optimization Method:** AdamW.
 
 **Best Hyperparameters:**
 - `learning_rate`: 4e-5
-- `num_train_epochs`: 4
+- `num_train_epochs`: 3
 - `batch_size`: 32
 
 **Cross-Validation Results**
-- Average Accuracy: 0.85
-- Best Accuracy Score: 0.87
+
+- Best Accuracy Score: 0.58
 
 ## FlauBERT Model
 
@@ -156,13 +158,13 @@ This section documents the process of training several machine learning models, 
 
 **Tuned Hyperparameters:**
 - `learning_rate`: Tested over [5e-5, 3e-5, 2e-5].
-- `num_train_epochs`: Tested [3, 4, 5].
+- `num_train_epochs`: Tested [3,5].
 
 **Optimization Method:** Manual Iterative Search.
 
 **Best Hyperparameters:**
 - `learning_rate`: 3e-5
-- `num_train_epochs`: 4
+- `num_train_epochs`: 3
 
 **Cross-Validation Results**
 - Average Accuracy: 0.63
