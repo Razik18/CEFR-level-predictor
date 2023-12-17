@@ -19,7 +19,7 @@ You can find all information and rules on this Kaggle link: [Kaggle Competition]
 #### Dataset Description
 - `training_data.csv` -> the training set (with sentence and respective difficulty)
 - `unlabelled_test_data.csv` -> the test set (with just sentence)
-- `rajouter le fichier generer par notre model` -> submission of our prediction with only id and difficulty
+- `sample_submission.csv` -> submission of our prediction with only id and difficulty
 
 #### Columns
 - `id`: Numerical identifier of the sentence.
