@@ -127,7 +127,27 @@ This section documents the process of training several machine learning models, 
 - `max_features`: auto
 
 **Cross-Validation Results**
-- Average Accuracy: 0.84
+- Average Accuracy: 0.54
+- Best Accuracy Score: 0.59
+
+## CamemBERT Model
+
+### Hyperparameter Tuning
+
+**Tuned Hyperparameters:**
+- `learning_rate`: Tested over [5e-5, 4e-5, 3e-5].
+- `num_train_epochs`: Tested [3, 4, 5].
+- `batch_size`: Tested [16, 32, 64].
+
+**Optimization Method:** Grid Search with 5-fold cross-validation.
+
+**Best Hyperparameters:**
+- `learning_rate`: 4e-5
+- `num_train_epochs`: 4
+- `batch_size`: 32
+
+**Cross-Validation Results**
+- Average Accuracy: 0.85
 - Best Accuracy Score: 0.87
 
 ## FlauBERT Model
@@ -145,20 +165,21 @@ This section documents the process of training several machine learning models, 
 - `num_train_epochs`: 4
 
 **Cross-Validation Results**
-- Average Accuracy: 0.88
-- Best Accuracy Score: 0.91
+- Average Accuracy: 0.63
+- Best Accuracy Score: 0.62
 
 ## Comparative Analysis
 
-The performance of each model was evaluated based on precision, recall, F1-score, and accuracy. The following table summarizes the results:
+The performance of each model was evaluated based on precision, recall, F1-score, and accuracy. The following table summarizes the results without doing any cleaning on the data:
 
 | Model               | Precision | Recall | F1-score | Accuracy |
 |---------------------|-----------|--------|----------|----------|
-| Logistic Regression | 0.81      | 0.80   | 0.80     | 0.82     |
-| kNN                 | 0.77      | 0.75   | 0.76     | 0.78     |
-| Random Forests      | 0.74      | 0.73   | 0.73     | 0.76     |
-| CamemBERT           | 0.83      | 0.82   | 0.82     | 0.84     |
-| FlauBERT Model      | 0.87      | 0.88   | 0.87     | 0.88     |
+| Logistic Regression | 0.42      | 0.45   | 0.40     | 0.32     |
+| kNN                 | 0.47      | 0.48   | 0.46     | 0.38     |
+| Decision Tree       | 0.48      | 0.49   | 0.46     | 0.39     |
+| Random Forests      | 0.54      | 0.53   | 0.53     | 0.46     |
+| CamemBERT           | 0.53      | 0.56   | 0.57     | 0.59     |
+| FlauBERT Model      | 0.87      | 0.88   | 0.87     | 0.62     |
 
 ### Best Model
 
@@ -166,10 +187,19 @@ Based on the above metrics, the best performing model is the **FlauBERT Model**.
 
 
 #### 4. Submission
-- We use our best model on the cleaned sentences of file 'unlabelled_test_dat.csv', convert it to the same format as in the file 'sample_submission.csv', download in CSV format, and submit on Kaggle (it gave us a score of 0.45583).
+- We use our best model on the file 'unlabelled_test_dat.csv', convert it to the same format as in the file 'sample_submission.csv', download in CSV format, and submit on Kaggle (it gave us a score of 0.629).
 
 #### 6. Model Improvement
-- Many ways exist to improve the accuracy of a model. For this competition, we propose two other methods: The Principal Component Analysis (PCA), which for some unknown reason didn't improve our model. Afterward, we tried the Bert Model from HuggingFace which gave us a slight improvement. You can find them in the CODE folder 'Lausanne_PCA.ipynb', 'Lausanne_bert.ipynb'.
+To improve our model we consider these two approaches; 
+
+-Fine-Tune Hyperparameters:
+would conduct a more comprehensive hyperparameter optimization, particularly focusing on the learning rate, batch size, and the number of training epochs.
+Utilize advanced techniques like Bayesian optimization for a more efficient search through the hyperparameter space, aiming to find the optimal combination that maximizes model performance.
+Expand and Refine Preprocessing:
+
+-Implement advanced text preprocessing techniques: 
+This would include lemmatization to reduce words to their base or dictionary form, and custom tokenization to better capture the nuances of the French language.
+Explore data augmentation strategies like synonym replacement or back-translation (translating text to another language and back) to generate additional training data, which can be particularly helpful in improving the model's robustness and handling of diverse sentence structures.
 
 
 (https://www.kaggle.com/competitions/detecting-french-texts-difficulty-level-2023/overview)
