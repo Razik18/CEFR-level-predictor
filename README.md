@@ -187,10 +187,6 @@ The performance of each model was evaluated based on precision, recall, F1-score
 
 ![Confusion Matrix de notre modele FlauBERT](Confusion_matrix_FlauBERT.png)
 
-
-# Pour utiliser l'image, vous pouvez utiliser le nom de fichier :
-# image = open('nom_de_fichier.jpg', 'rb').read()
-
 ### Best Model
 
 Based on the above metrics, the best performing model is the **FlauBERT Model**. This determination is based on the highest overall accuracy and balanced precision and recall, which are critical factors for our specific use-case of text classification.
