@@ -87,7 +87,7 @@ This section documents the process of training several machine learning models, 
 ### Hyperparameter Tuning
 
 **Tuned Hyperparameters:**
-- `n_neighbors`: Number of neighbors tested over [5, 7, 9].
+- `n_neighbors`: Number of neighbors tested over [5, 7].
 - `weights`: Weight function used in prediction [‘uniform’, ‘distance’].
 
 **Optimization Method:** Random Search with 5-fold cross-validation.
@@ -122,7 +122,7 @@ This section documents the process of training several machine learning models, 
 ### Hyperparameter Tuning
 
 **Tuned Hyperparameters:**
-- `n_estimators`: Number of trees in the forest tested over [200, 300, 400].
+- `n_estimators`: Number of trees in the forest tested over [300, 400].
 - `max_features`: Number of features to consider when looking for the best split tested over [‘auto’, ‘sqrt’].
 
 **Optimization Method:** Grid Search with 5-fold cross-validation.
@@ -139,8 +139,8 @@ This section documents the process of training several machine learning models, 
 ### Hyperparameter Tuning
 
 **Tuned Hyperparameters:**
-- `learning_rate`: Tested over [5e-5, 4e-5, 3e-5].
-- `num_train_epochs`: Tested [3, 4, 5].
+- `learning_rate`: Tested over [4e-5, 3e-5].
+- `num_train_epochs`: Tested [3, 4].
 - `batch_size`: Tested [16, 32].
 
 **Optimization Method:** AdamW.
@@ -151,7 +151,6 @@ This section documents the process of training several machine learning models, 
 - `batch_size`: 32
 
 **Cross-Validation Results**
-
 - Best Accuracy Score: 0.58
 
 ## FlauBERT Model
@@ -159,8 +158,8 @@ This section documents the process of training several machine learning models, 
 ### Hyperparameter Tuning
 
 **Tuned Hyperparameters:**
-- `learning_rate`: Tested over [5e-5, 3e-5, 2e-5].
-- `num_train_epochs`: Tested [3,5].
+- `learning_rate`: Tested over [3e-5, 2e-5].
+- `num_train_epochs`: Tested [3,5,15].
 
 **Optimization Method:** Manual Iterative Search.
 
@@ -169,9 +168,9 @@ This section documents the process of training several machine learning models, 
 - `num_train_epochs`: 3
 
 **Cross-Validation Results**
-- Average Accuracy: 0.63
 - Best Accuracy Score: 0.62
 
+![Confusion Matrix de notre modele FlauBERT](Confusion_matrix_FlauBERT.png)
 ## Comparative Analysis
 
 The performance of each model was evaluated based on precision, recall, F1-score, and accuracy. The following table summarizes the results without doing any cleaning on the data:
@@ -183,9 +182,7 @@ The performance of each model was evaluated based on precision, recall, F1-score
 | Decision Tree       | 0.48      | 0.49   | 0.46     | 0.39     |
 | Random Forests      | 0.54      | 0.53   | 0.53     | 0.46     |
 | CamemBERT           | 0.53      | 0.56   | 0.57     | 0.59     |
-| FlauBERT Model      | 0.87      | 0.88   | 0.87     | 0.62     |
-
-![Confusion Matrix de notre modele FlauBERT](Confusion_matrix_FlauBERT.png)
+| FlauBERT Model      | 0.60      | 0.61   | 0.60     | 0.62     |
 
 ### Best Model
 
