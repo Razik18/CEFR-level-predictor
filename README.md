@@ -185,7 +185,7 @@ The performance of each model was evaluated based on precision, recall, F1-score
 | CamemBERT           | 0.53      | 0.56   | 0.57     | 0.59     |
 | FlauBERT Model      | 0.87      | 0.88   | 0.87     | 0.62     |
 
-![Confusion Matrix de notre modele FlauBERT](chemin/vers/l'image)
+![Confusion Matrix de notre modele FlauBERT](Confusion_matrix_FlauBERT.png)
 
 
 # Pour utiliser l'image, vous pouvez utiliser le nom de fichier :
