@@ -132,7 +132,7 @@ This section documents the process of training several machine learning models, 
 - `max_features`: auto
 
 **Results**
-- Best Accuracy Score: 0.59
+- Best Accuracy Score: 0.49
 
 ## CamemBERT Model
 
