@@ -26,7 +26,7 @@ You can find all information and rules on this Kaggle link: [Kaggle Competition]
 - `sentence`: A sentence in French for which you want to predict the difficulty level.
 - `difficulty`: The difficulty level of the sentence (from A1 to C2). This column would be your target variable.
 
-We can upload them from the GitHub Data folder or you can use directly the Kaggle API and your Kaggle credentials.
+
 
 #### Approach
 1. **Installing the Necessary Packages**
