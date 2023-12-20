@@ -185,28 +185,28 @@ The performance of each model was evaluated based on precision, recall, F1-score
 Based on the above metrics, the best performing model is the **FlauBERT Model**. This determination is based on the highest overall accuracy and balanced precision and recall, which are critical factors for our specific use-case of text classification.
 
 
-#### 4. Submission
+## 4. Submission
 - We use our best model on the file 'unlabelled_test_dat.csv', convert it to the same format as in the file 'sample_submission.csv', download in CSV format, and submit on Kaggle (it gave us a score of 0.629).
 
-#### 6. Accuracy Improvement 
+## 6. Accuracy Improvement 
 
 
-##### Selection of Diverse Models
+### Selection of Diverse Models
 We selected five distinct NLP models, each renowned for its capabilities in language understanding. These included different versions and configurations of models like Flaubert and Camembert, specifically tailored for the French language.
 
-##### Individual Predictions
+### Individual Predictions
 Each model was tasked with predicting language difficulty levels on the same set of data. This step ensured that we gathered diverse opinions from each model, considering their unique learning and prediction patterns.
 
-##### Data Consolidation
+### Data Consolidation
 Predictions from all models were consolidated into a single dataset. This dataset included the unique identifier for each data point (`id`) and the predicted difficulty level from each model.
 
-##### Majority Voting Mechanism
+### Majority Voting Mechanism
 We applied a majority voting system to this consolidated dataset. For each data point, we identified the most frequently predicted difficulty level among the models. This approach allowed us to leverage the collective wisdom of all models, reducing the impact of any individual model biases or errors.
 
-##### Final Predictions Compilation
+### Final Predictions Compilation
 The most common predictions across models were compiled into a final dataset, providing a robust and well-rounded prediction for each data point.
 
-##### Advantages of This Method
+### Advantages of This Method
 
 - **Reduced Bias:** By combining predictions from multiple models, we mitigate the bias inherent in any single model.
 - **Enhanced Accuracy:** The majority voting system tends to favor the most reliable and consistent predictions, enhancing overall accuracy.
@@ -214,7 +214,7 @@ The most common predictions across models were compiled into a final dataset, pr
 
 In conclusion, this ensemble approach, grounded in the principle of majority voting, marks a significant step towards more reliable and accurate language difficulty predictions. By harmonizing the insights of multiple NLP models, we aim to provide predictions that are not only accurate but also robust and dependable.
 
-#### 7. Model Improvement
+## 7. Model Improvement
 To improve our model we consider these two approaches; 
 
 -Fine-Tune Hyperparameters:
