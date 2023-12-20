@@ -71,16 +71,16 @@ This section documents the process of training several machine learning models, 
 
 **Tuned Hyperparameters:**
 - `C`: Inverse of regularization strength tested over [1, 10, 100].
-- `solver`: Optimization algorithms tested [‘liblinear’, ‘saga’].
+- `solver`: Optimization algorithms tested [‘lbfgs’, ‘saga’].
 
 **Optimization Method:** Grid Search with 5-fold cross-validation.
 
 **Best Hyperparameters:**
 - `C`: 10
-- `solver`: liblinear
+- `solver`: lbfgs
 
 **Results**
-- Best Accuracy Score: 0.32
+- Best Accuracy Score: 0.476
 
 ## k-Nearest Neighbors (kNN)
 
@@ -88,34 +88,30 @@ This section documents the process of training several machine learning models, 
 
 **Tuned Hyperparameters:**
 - `n_neighbors`: Number of neighbors tested over [5, 7].
-- `weights`: Weight function used in prediction [‘uniform’, ‘distance’].
 
 **Optimization Method:** Random Search with 5-fold cross-validation.
 
 **Best Hyperparameters:**
 - `n_neighbors`: 5
-- `weights`: distance
 
 **Results**
-- Best Accuracy Score: 0.31
+- Best Accuracy Score: 0.3187
 
 ## Decision Tree
 
 ### Hyperparameter Tuning
 
 **Tuned Hyperparameters:**
-- `max_depth`: The maximum depth of the tree tested over [20, 30, None].
-- `min_samples_split`: Minimum number of samples required to split an internal node tested over [2, 5, 10].
+- `max_depth`: The maximum depth of the tree tested over [1-26].
 
 **Optimization Method:** Grid Search with 5-fold cross-validation.
 
 **Best Hyperparameters:**
-- `max_depth`: 20
-- `min_samples_split`: 5
+- `max_depth`: 16
 
 **Results**
 
-- Best Accuracy Score: 0.39
+- Best Accuracy Score: 0.3104
 
 ## Random Forests
 
@@ -123,49 +119,49 @@ This section documents the process of training several machine learning models, 
 
 **Tuned Hyperparameters:**
 - `n_estimators`: Number of trees in the forest tested over [300, 400].
-- `max_features`: Number of features to consider when looking for the best split tested over [‘auto’, ‘sqrt’].
 
 **Optimization Method:** Grid Search with 5-fold cross-validation.
 
 **Best Hyperparameters:**
-- `n_estimators`: 300
-- `max_features`: auto
+- `n_estimators`: 400
 
 **Results**
-- Best Accuracy Score: 0.49
+- Best Accuracy Score: 0.3812
 
 ## CamemBERT Model
 
 ### Hyperparameter Tuning
 
 **Tuned Hyperparameters:**
-- `learning_rate`: Tested over [4e-5, 3e-5].
-- `num_train_epochs`: Tested [3, 4].
-- `batch_size`: Tested [16, 32].
+- `learning_rate`: Tested over [1e-4, 5e-5, 2e-5].
+- `num_train_epochs`: Tested [3, 5, 7].
+- `batch_size`: Tested [8, 16, 32].
 
 **Optimization Method:** AdamW.
 
 **Best Hyperparameters:**
-- `learning_rate`: 4e-5
+- `learning_rate`: 5e-5
 - `num_train_epochs`: 3
-- `batch_size`: 32
+- `batch_size`: 16
 
 **Cross-Validation Results**
-- Best Accuracy Score: 0.58
+- Best Accuracy Score: 0.59
 
 ## FlauBERT Model
 
 ### Hyperparameter Tuning
 
 **Tuned Hyperparameters:**
-- `learning_rate`: Tested over [3e-5, 2e-5].
-- `num_train_epochs`: Tested [3,5,15].
+- `learning_rate`: Tested over [1e-4, 5e-5, 2e-5].
+- `num_train_epochs`: Tested [3, 5, 7].
+- `batch_size`: Tested [8, 16, 32].
 
 **Optimization Method:** Manual Iterative Search.
 
 **Best Hyperparameters:**
-- `learning_rate`: 3e-5
+- `learning_rate`: 5e-5
 - `num_train_epochs`: 3
+- `batch_size`: 16
 
 **Cross-Validation Results**
 - Best Accuracy Score: 0.62
@@ -177,12 +173,12 @@ The performance of each model was evaluated based on precision, recall, F1-score
 
 | Model               | Precision | Recall | F1-score | Accuracy |
 |---------------------|-----------|--------|----------|----------|
-| Logistic Regression | 0.42      | 0.45   | 0.40     | 0.32     |
-| kNN                 | 0.47      | 0.48   | 0.46     | 0.38     |
-| Decision Tree       | 0.48      | 0.49   | 0.46     | 0.39     |
-| Random Forests      | 0.54      | 0.53   | 0.53     | 0.46     |
-| CamemBERT           | 0.53      | 0.56   | 0.57     | 0.59     |
-| FlauBERT Model      | 0.60      | 0.61   | 0.60     | 0.62     |
+| Logistic Regression | 0.4756    | 0.4760 | 0.4702   | 0.4760   |
+| kNN                 | 0.3902    | 0.3187 | 0.2948   | 0.3187   |
+| Decision Tree       | 0.3139    | 0.3104 | 0.3029   | 0.3104   |
+| Random Forests      | 0.3966    | 0.3812 | 0.3593   | 0.3812   |
+| CamemBERT           | 0.5932    | 0.5743 | 0.5734   | 0.5943   |
+| FlauBERT Model      | 0.6192    | 0.6202 | 0.6021   | 0.6202   |
 
 ### Best Model
 
@@ -192,7 +188,9 @@ Based on the above metrics, the best performing model is the **FlauBERT Model**.
 #### 4. Submission
 - We use our best model on the file 'unlabelled_test_dat.csv', convert it to the same format as in the file 'sample_submission.csv', download in CSV format, and submit on Kaggle (it gave us a score of 0.629).
 
-#### 6. Model Improvement
+#### 6. Accuaracy Improvement 
+-
+#### 7. Model Improvement
 To improve our model we consider these two approaches; 
 
 -Fine-Tune Hyperparameters:
@@ -203,6 +201,7 @@ Expand and Refine Preprocessing:
 -Implement advanced text preprocessing techniques: 
 This would include lemmatization to reduce words to their base or dictionary form, and custom tokenization to better capture the nuances of the French language.
 Explore data augmentation strategies like synonym replacement or back-translation (translating text to another language and back) to generate additional training data, which can be particularly helpful in improving the model's robustness and handling of diverse sentence structures.
+
 
 
 (https://www.kaggle.com/competitions/detecting-french-texts-difficulty-level-2023/overview)
