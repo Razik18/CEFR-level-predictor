@@ -14,7 +14,7 @@ As described above in the project's Title, the main goal of this Kaggle competit
 You can find all information and rules on this Kaggle link: [Kaggle Competition](https://www.kaggle.com/competitions/detecting-french-texts-difficulty-level-2023/overview)
 
 #### Our Youtube Video 
-[Watch the video](#)
+[Watch the video](#https://youtu.be/Y12_XP3deXM)
 
 #### Dataset Description
 - `training_data.csv` -> the training set (with sentence and respective difficulty)
