@@ -17,7 +17,7 @@ You can find all information and rules on this Kaggle link: [Kaggle Competition]
 [Watch the video](https://youtu.be/Y12_XP3deXM)
 
 #### Our Model
-[Download the model](https://drive.google.com/file/d/1EsAeLdIlT1MZPObT-0babrWv9zHK4-Li/view?usp=sharing)
+[Download the model](https://drive.google.com/file/d/1UpxhE_KblT96MApBjaYRTKWCkO8S73Mu/view?usp=sharing)
 
 #### Dataset Description
 - `training_data.csv` -> the training set (with sentence and respective difficulty)
