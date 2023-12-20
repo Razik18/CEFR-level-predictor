@@ -23,7 +23,7 @@ You can find all information and rules on this Kaggle link: [Kaggle Competition]
 - `training_data.csv` -> the training set (with sentence and respective difficulty)
 - `unlabelled_test_data.csv` -> the test set (with just sentence)
 - `sample_submission.csv` -> submission of our prediction with only id and difficulty
-- `augmented_training_data2.csv` -> the training set copie pasted 4 times (to simulate more epochs)
+- `augmented_training_data2.csv` -> the training set copy pasted 4 times (to simulate more epochs)
 
 #### Columns
 - `id`: Numerical identifier of the sentence.
