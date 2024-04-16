@@ -65,7 +65,7 @@ Before embarking on the model training journey, we invested significant effort i
 ## Decision on Data Cleaning:
 Based on these observations, we concluded that extensive data cleaning or balancing was not necessary for our project. This finding allowed us to channel our efforts more effectively towards feature engineering and model tuning. 
 
-####Model Training and Hyperparameter Optimization
+###Model Training and Hyperparameter Optimization
 
 This section documents the process of training several machine learning models, including the hyperparameter optimization for each, and provides a comparative analysis of their performance based on several metrics.
 
